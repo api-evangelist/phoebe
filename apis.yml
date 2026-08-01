@@ -1,20 +1,52 @@
 aid: phoebe
-name: Phoebe
-description: 'Phoebe is a company surfaced as a portfolio company of gv and added to the API Evangelist
-  network as a stub for enrichment. Sector: ai. This profile is a lead awaiting the enrichment pipeline.'
+name: Coral
+description: 'Coral is a local-first SQL runtime that gives AI agents governed, read-only
+  access to data across any API, database, or file system using standard SQL — no custom
+  integrations, ETL, or glue code required. Built by Phoebe Technology Limited (a GV /
+  Google Ventures portfolio company incorporated in England and Wales, formerly branded
+  Phoebe at phoebe.ai), Coral translates SQL into API calls or file reads and returns a
+  single result set, handling authentication, authorization, pagination, rate limiting,
+  and schema mapping automatically. It ships 25+ bundled sources (GitHub, GitLab, Slack,
+  Datadog, Linear, Sentry, Jira, Stripe, PagerDuty, Notion, Grafana, Confluence and more),
+  supports cross-source SQL JOINs executed locally, and exposes the same runtime over the
+  Model Context Protocol (MCP) or a CLI. Coral is open-source (Apache-2.0), self-hosted so
+  queries and data never leave your infrastructure, and ISO 27001:2022 certified / GDPR
+  compliant.'
 url: https://raw.githubusercontent.com/api-evangelist/phoebe/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - gv
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-from-portfolio-lead
+x-company: Phoebe Technology Limited
+x-brand: Coral
+x-former-domain: https://phoebe.ai
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+image: https://withcoral.com/og-image.png
 tags:
 - Company
 - Ai
+- Agents
+- Model Context Protocol
+- SQL
+- Data Access
+- Data Integration
+- Developer Tools
+- Open Source
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -22,5 +54,58 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: VulnerabilityDisclosure
+  url: security/phoebe-vulnerability-disclosure.yml
+- type: Security
+  url: security/phoebe-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/phoebe-domain-security.yml
 - type: Website
-  url: https://phoebe.ai
+  url: https://withcoral.com
+- type: DeveloperPortal
+  url: https://withcoral.com/docs
+- type: Documentation
+  url: https://withcoral.com/docs
+- type: GettingStarted
+  url: https://withcoral.com/docs/quickstart
+- type: Blog
+  url: https://withcoral.com/blog
+- type: Pricing
+  url: https://withcoral.com/pricing
+- type: GitHubOrganization
+  url: https://github.com/withcoral
+- type: Support
+  url: https://withcoral.com/discord
+- type: TermsOfService
+  url: https://withcoral.com/terms
+- type: PrivacyPolicy
+  url: https://withcoral.com/privacy
+- type: LLMsTxt
+  url: llms/phoebe-llms.txt
+- type: WellKnown
+  url: well-known/phoebe-well-known.yml
+- type: SecurityTxt
+  url: well-known/phoebe-security.txt
+- type: MCPServer
+  url: mcp/phoebe-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Packages
+  url: packages/phoebe-packages.yml
+- type: CLI
+  url: cli/phoebe-cli.yml
+- type: ChangeLog
+  url: changelog/phoebe-changelog.yml
+- type: Lifecycle
+  url: lifecycle/phoebe-lifecycle.yml
+- type: Conventions
+  url: conventions/phoebe-conventions.yml
+- type: Conformance
+  url: conformance/phoebe-conformance.yml
+- type: Compliance
+  url: conformance/phoebe-conformance.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 17
+  pass: local-v1

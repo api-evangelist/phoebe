@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/withcoral/homebrew-tap
+note: >-
+  Coral distributes a single self-contained CLI binary (Rust), not language client SDKs.
+  Official distribution is the Homebrew cask in withcoral/homebrew-tap and the GitHub
+  release tarballs. The npm/PyPI/crates.io packages named "coral" are unrelated
+  third-party projects and are intentionally NOT listed here.
+packages:
+- language: cli
+  registry: homebrew
+  name: withcoral/tap/coral
+  url: https://github.com/withcoral/homebrew-tap
+  install: brew install withcoral/tap/coral
+  official: true
+  version: 0.6.0
+  platforms: [macos-arm64, macos-x86_64, linux-arm64, linux-x86_64]
+- language: cli
+  registry: github-releases
+  name: coral
+  url: https://github.com/withcoral/coral/releases
+  install: >-
+    download coral-<arch>-<os>.tar.gz from GitHub Releases
+  official: true
+  source_language: rust

@@ -1,0 +1,24 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/withcoral/coral
+versioning:
+  scheme: semver
+  current: 0.6.0
+  release_tooling: release-please
+  release_channel: https://github.com/withcoral/coral/releases
+  changelog: https://github.com/withcoral/coral/blob/main/CHANGELOG.md
+deprecation:
+  policy_url: null
+  breaking_changes_communicated: true
+  breaking_change_convention: >-
+    Breaking changes are surfaced in the release-please CHANGELOG under a
+    "⚠ BREAKING CHANGES" heading per release (Conventional Commits). No standalone
+    deprecation-policy page or Sunset/Deprecation HTTP header support (Coral is a
+    local CLI/MCP runtime, not a hosted HTTP API).
+sla:
+  url: null
+  note: Open-source self-hosted runtime; no hosted uptime SLA. The Team/Enterprise
+    hosted tiers offer priority/named support and (Enterprise) SLAs.
+status_page: null
+security_policy: https://github.com/withcoral/coral/blob/main/SECURITY.md
+license: Apache-2.0

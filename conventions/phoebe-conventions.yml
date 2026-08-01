@@ -1,0 +1,47 @@
+generated: '2026-07-20'
+method: searched
+source: https://withcoral.com/docs
+summary: >-
+  Coral's contract is a read-only SQL surface over heterogeneous sources rather than a
+  traditional REST API. Agents/users write standard SQL; Coral translates it into API
+  calls or file reads and returns tabular rows. These conventions describe how that
+  surface behaves.
+interface:
+  query_language: SQL (read-only)
+  mutations: not supported by design (read layer only)
+  table_naming: '<source_schema>.<table>  e.g. github.issues, linear.attachments'
+  cross_source_joins: supported; join executed locally after each side is fetched from its backing source
+  required_filters: >-
+    Some tables/table-functions declare required filters that MUST appear in WHERE;
+    inspect coral.filters / required_filters / is_required_filter.
+  virtual_columns: filter-only, return NULL at projection; check is_virtual.
+  limit: callers should add LIMIT unless complete output is required.
+pagination:
+  handled_by: Coral (automatic)
+  note: >-
+    Coral handles upstream pagination, retries, and rate limiting internally and returns
+    a single consolidated result set; it also infers OpenAPI pagination hints for
+    source specs. Callers do not paginate manually.
+authentication:
+  product_surface: local — no network auth to Coral itself (single-user, local-first)
+  source_credentials: >-
+    Per-source credentials supplied via matching environment variables or interactive
+    prompts (coral source add --interactive); stored locally with OS keychain support
+    and used only at query time. Credentials never leave the machine.
+  oauth: Coral supports OAuth (incl. dynamic client registration, RFC 7591) for source installs.
+idempotency:
+  supported: false
+  reason: Coral is a read-only query runtime; there is no write/mutation contract that would require idempotency keys.
+metadata_discovery:
+  system_tables: [coral.tables, coral.columns, coral.filters, coral.table_functions, coral.inputs]
+  secrets: coral.inputs shows value = NULL for secrets; use is_set.
+error_semantics:
+  note: >-
+    Distinguish missing source config, missing credentials, query errors, and empty
+    results — empty results are not errors. No RFC 9457 problem+json envelope (not an HTTP API).
+versioning: see lifecycle/phoebe-lifecycle.yml
+cross_links:
+  lifecycle: lifecycle/phoebe-lifecycle.yml
+  authentication: source credentials handled locally (no product authentication/ artifact — no network API)
+  mcp: mcp/phoebe-mcp.yml
+  cli: cli/phoebe-cli.yml

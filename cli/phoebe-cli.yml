@@ -1,0 +1,54 @@
+generated: '2026-07-20'
+method: searched
+source: https://withcoral.com/docs
+name: coral
+description: >-
+  Coral's first-party CLI is the primary interface to the local SQL runtime: install
+  sources, inspect schemas, run read-only SQL, expose the runtime over MCP, and open a
+  local UI. Written in Rust; single self-contained binary.
+install:
+- method: homebrew
+  command: brew install withcoral/tap/coral
+- method: github-releases
+  command: download coral-<arch>-<os>.tar.gz from https://github.com/withcoral/coral/releases
+shell_completions: [bash, zsh, fish]
+command_groups:
+- group: source
+  description: Install and manage source specs (connectors to APIs / datasets).
+  commands:
+  - coral source discover        # list bundled sources available in your build
+  - coral source add <NAME>      # install a bundled source
+  - coral source add --interactive <NAME>  # install with interactive credential prompts
+  - coral source add --file ./spec.yaml    # import a custom source spec
+  - coral source list            # list installed sources and secret storage route
+  - coral source info <NAME>     # show metadata, inputs, description for a source
+  - coral source lint ./spec.yaml  # validate a source spec YAML before installing
+  - coral source test <NAME>     # post-install validation and test queries
+  - coral source remove <NAME>   # remove an installed source
+- group: query
+  description: Execute read-only SQL across installed sources.
+  commands:
+  - coral sql "<SQL>"            # execute a read-only SQL query (supports cross-source JOINs)
+- group: mcp
+  description: Expose the runtime to agents.
+  commands:
+  - coral mcp-stdio             # start the MCP stdio server for agents
+- group: workspace
+  description: Manage workspaces.
+  commands:
+  - coral workspace list
+  - coral workspace create <NAME>
+- group: ui
+  description: Local UI.
+  commands:
+  - coral ui                    # open the local Coral UI (Reef) in your browser
+system_tables:
+- coral.tables          # all queryable tables and their schemas
+- coral.columns         # columns for each table with types and descriptions
+- coral.filters         # required and optional filters for tables
+- coral.table_functions # source-scoped table functions and their arguments
+- coral.inputs          # configured source variables and secrets (secrets show NULL)
+key_flows:
+- Install a source and query it, e.g. coral source add github then coral sql "SELECT ... FROM github.issues WHERE ..."
+- Cross-source JOIN across two installed sources in a single SQL statement.
+- Expose the runtime over MCP for Cursor / VS Code / Claude Desktop via coral mcp-stdio.

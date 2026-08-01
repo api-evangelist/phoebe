@@ -1,0 +1,38 @@
+# Coral
+
+> Coral is a SQL query layer for AI agents. It gives agents governed, read-only access to data across any API, database, or file system using standard SQL — no custom integrations, ETL, or glue code required.
+
+Coral is open-source (Apache 2.0) and self-hosted: queries, results, and source data never leave your infrastructure.
+
+## Key capabilities
+
+- Query across any combination of data sources with standard SQL JOINs
+- Handles authentication, authorization, pagination, rate limiting, and schema mapping automatically
+- Column-level access controls and per-agent scoping
+- Works over MCP (Model Context Protocol) or CLI
+- Self-learning context that builds semantic hints from query patterns
+- 27% more accurate agent responses, 72% lower AI costs vs source-level MCPs (benchmark data)
+
+## Pricing
+
+- **Open Source**: Free forever (Apache 2.0). Full query engine, unlimited sources/agents/queries, self-hosted, community support.
+- **Team**: $249/month + $0.005/query above 50,000. Hosted on Coral, admin tools, social sign-in, priority support.
+- **Enterprise**: Custom pricing. SAML/SCIM, advanced RBAC, audit logs, custom connectors, SLAs, named support.
+
+## Data privacy
+
+Coral runs on your infrastructure. It does not ingest, store, or forward your data, and does not use it to train AI models. ISO 27001:2022 certified, GDPR compliant. Zero persistence by default.
+
+## Links
+
+- Documentation: https://withcoral.com/docs
+- GitHub: https://github.com/withcoral/coral
+- Blog: https://withcoral.com/blog
+- Contact: https://withcoral.com/contact
+- Data privacy: https://withcoral.com/data-privacy
+- Terms of service: https://withcoral.com/terms
+- Privacy policy: https://withcoral.com/privacy
+
+## Company
+
+Coral is built by Phoebe Technology Limited, a company incorporated in England and Wales. Contact: legal@withcoral.com.

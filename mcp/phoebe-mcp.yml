@@ -1,0 +1,55 @@
+generated: '2026-07-20'
+method: searched
+status: published
+source: https://withcoral.com/docs
+summary: >-
+  Coral is itself an MCP server: the same local SQL runtime that the CLI drives is
+  exposed to agents over MCP via `coral mcp-stdio`. A separate hosted MCP server
+  (Mintlify) provides documentation search. Coral's product MCP is self-hosted /
+  local — agents connect to the stdio server running on the user's machine, so no
+  public hosted product-MCP URL exists by design (data never leaves the host).
+servers:
+- name: coral
+  kind: product
+  transport: stdio
+  command: coral mcp-stdio
+  hosted: false
+  self_hosted: true
+  authentication: local (source credentials via env / OS keychain)
+  description: >-
+    Exposes Coral's local SQL runtime over MCP so agents can query 25+ bundled
+    sources (GitHub, GitLab, Slack, Datadog, Linear, Sentry, Jira, Stripe,
+    PagerDuty, Notion, Grafana, Confluence, files) with one SQL statement,
+    including cross-source JOINs executed locally. Read-only.
+  install:
+    add_to_all_agents: npx add-mcp -n coral -g "$(which coral) mcp-stdio"
+    cursor: '{"mcpServers":{"coral":{"type":"stdio","command":"coral","args":["mcp-stdio"]}}}'
+    vscode: '{"servers":{"coral":{"type":"stdio","command":"coral","args":["mcp-stdio"]}}}'
+    claude_desktop: '{"mcpServers":{"coral":{"command":"coral","args":["mcp-stdio"]}}}'
+  tools:
+  - name: search
+    description: Search the catalog for relevant tables, table functions, columns, and filters.
+  - name: list_catalog
+    description: Paged catalog view narrowed by schema or kind.
+  - name: sql
+    description: Execute a read-only SQL query across installed sources (supports cross-source JOINs).
+  - name: feedback
+    description: File structured feedback when Coral blocks progress.
+  resources:
+  - uri: coral://guide
+    description: Query patterns and guidance.
+  - uri: coral://tables
+    description: Table summaries across installed sources.
+- name: coral-docs
+  kind: documentation
+  transport: http
+  url: https://withcoral.mintlify.dev/docs/mcp
+  hosted: true
+  authentication: none
+  server_card: well-known/phoebe-mcp-server-card.json
+  description: Hosted MCP server for searching and retrieving Coral documentation.
+  tools:
+  - name: search_coral_docs
+    description: Search the Coral Docs knowledge base for guides, references, and examples.
+  - name: query_docs_filesystem_coral_docs
+    description: Read-only shell-like query (rg/head/cat) over a virtualized docs+OpenAPI filesystem.

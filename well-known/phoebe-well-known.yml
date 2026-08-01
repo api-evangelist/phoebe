@@ -1,0 +1,35 @@
+generated: '2026-07-20'
+method: searched
+hosts:
+- https://withcoral.com
+- https://withcoral.com/docs
+documents:
+- path: /.well-known/security.txt
+  host: https://withcoral.com
+  status: 200
+  file: phoebe-security.txt
+  note: RFC 9116 security.txt (Contact + Expires)
+- path: /docs/.well-known/agent-card.json
+  host: https://withcoral.com
+  status: 200
+  file: phoebe-agent-card.json
+  note: A2A-style Agent Card (protocolVersion 0.3) advertising the withcoral skill
+- path: /docs/.well-known/agent-skills/index.json
+  host: https://withcoral.com
+  status: 200
+  file: phoebe-agent-skills-index.json
+  note: agentskills.io discovery index (0.2.0)
+- path: /docs/.well-known/mcp/server-card.json
+  host: https://withcoral.com
+  status: 200
+  file: phoebe-mcp-server-card.json
+  note: MCP server card for the hosted Coral Docs search MCP (Mintlify)
+- path: /.well-known/openid-configuration
+  host: https://withcoral.com
+  status: 404
+- path: /docs/.well-known/api-catalog
+  host: https://withcoral.com
+  status: 404
+- path: /docs/.well-known/security.txt
+  host: https://withcoral.com
+  status: 404

@@ -1,0 +1,28 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/withcoral/coral/blob/main/CHANGELOG.md
+scheme: semver
+tooling: release-please (Conventional Commits)
+current_version: 0.6.0
+entries:
+- version: 0.6.0
+  date: '2026-07-14'
+  breaking:
+  - Remove episode lifecycle surface (#1569)
+  additions:
+  - 'api: add task lifecycle contract (#1554)'
+  - 'app: add request principal boundary (#1745)'
+  - 'app: add shadow workspace database import; persist task lifecycle events; read workspaces from database'
+  - DSL V4 lookup key inference (#1592)
+  - 'reef: schema explorer, sources onboarding story, stream OAuth source installs'
+  - 'xtask/openapi: add standalone openapi tool (#1606)'
+  fixes:
+  - 'spec: expand OpenAPI pagination aliases (#1737); remove v4 fallback inflection'
+- version: 0.5.2
+  date: '2026-07-09'
+  additions:
+  - 'desktop: add Coral Desktop Electron app foundation (#1467)'
+  - 'engine: support named query parameters; type source table-function arguments'
+  - 'oauth: add dynamic client registration (#1216)'
+  - 'search: sqlite catalog + search store, universal search contracts, metadata search in CLI and MCP'
+  - 'spec: infer OpenAPI pagination hints (#1576)'

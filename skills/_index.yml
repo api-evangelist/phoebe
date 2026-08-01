@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/withcoral/skills
+note: >-
+  Coral publishes first-party Agent Skills. The comprehensive docs-published skill is
+  saved verbatim as phoebe-coral.md (from
+  https://withcoral.com/docs/.well-known/agent-skills/withcoral/skill.md). Three more
+  skills are published in the withcoral/skills GitHub repo and referenced by URL below.
+skills:
+- file: phoebe-coral.md
+  name: Coral
+  description: >-
+    Query multiple data sources with SQL over Coral MCP/CLI, set up MCP connections for
+    agents, write custom source specs, and manage data access workflows.
+  source: https://withcoral.com/docs/.well-known/agent-skills/withcoral/skill.md
+  type: skill-md
+- name: coral
+  description: >-
+    Query live sources through Coral MCP (GitHub, Jira, Slack, Linear, Datadog, Sentry,
+    files, connected data) before answering from assumptions.
+  source: https://github.com/withcoral/skills/blob/main/coral/SKILL.md
+  type: skill-md
+- name: coral-create-source-spec
+  description: Author a Coral source spec (YAML) to connect a new API or dataset.
+  source: https://github.com/withcoral/skills/blob/main/coral-create-source-spec/SKILL.md
+  type: skill-md
+- name: coral-review-source-spec
+  description: Review and validate a Coral source spec before installing it.
+  source: https://github.com/withcoral/skills/blob/main/coral-review-source-spec/SKILL.md
+  type: skill-md
