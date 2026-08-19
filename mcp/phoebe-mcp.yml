@@ -2,12 +2,10 @@ generated: '2026-07-20'
 method: searched
 status: published
 source: https://withcoral.com/docs
-summary: >-
-  Coral is itself an MCP server: the same local SQL runtime that the CLI drives is
-  exposed to agents over MCP via `coral mcp-stdio`. A separate hosted MCP server
-  (Mintlify) provides documentation search. Coral's product MCP is self-hosted /
-  local — agents connect to the stdio server running on the user's machine, so no
-  public hosted product-MCP URL exists by design (data never leaves the host).
+summary: 'Coral is itself an MCP server: the same local SQL runtime that the CLI drives is exposed to
+  agents over MCP via `coral mcp-stdio`. A separate hosted MCP server (Mintlify) provides documentation
+  search. Coral''s product MCP is self-hosted / local — agents connect to the stdio server running on
+  the user''s machine, so no public hosted product-MCP URL exists by design (data never leaves the host).'
 servers:
 - name: coral
   kind: product
@@ -16,11 +14,9 @@ servers:
   hosted: false
   self_hosted: true
   authentication: local (source credentials via env / OS keychain)
-  description: >-
-    Exposes Coral's local SQL runtime over MCP so agents can query 25+ bundled
-    sources (GitHub, GitLab, Slack, Datadog, Linear, Sentry, Jira, Stripe,
-    PagerDuty, Notion, Grafana, Confluence, files) with one SQL statement,
-    including cross-source JOINs executed locally. Read-only.
+  description: Exposes Coral's local SQL runtime over MCP so agents can query 25+ bundled sources (GitHub,
+    GitLab, Slack, Datadog, Linear, Sentry, Jira, Stripe, PagerDuty, Notion, Grafana, Confluence, files)
+    with one SQL statement, including cross-source JOINs executed locally. Read-only.
   install:
     add_to_all_agents: npx add-mcp -n coral -g "$(which coral) mcp-stdio"
     cursor: '{"mcpServers":{"coral":{"type":"stdio","command":"coral","args":["mcp-stdio"]}}}'
@@ -53,3 +49,11 @@ servers:
     description: Search the Coral Docs knowledge base for guides, references, and examples.
   - name: query_docs_filesystem_coral_docs
     description: Read-only shell-like query (rg/head/cat) over a virtualized docs+OpenAPI filesystem.
+deployment:
+  mode: remote
+  endpoint: https://withcoral.mintlify.dev/docs/mcp
+  verified: probed
+  probe: live
+  tools: 3
+  checked: '2026-08-12'
+  source: catalog MCP census
