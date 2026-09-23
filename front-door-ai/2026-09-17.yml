@@ -1,0 +1,29 @@
+# Front Door AI Index — phoebe — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: phoebe
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: withcoral.com
+  final_host: withcoral.com
+  ownership: own
+  owner: phoebe
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 18
+  host_score: 18
+  density: 11.21
+  words: 1605
+  tiers:
+    agentic: 8
+    core: 4
+    model: 6
+  ambiguous: 25
+  top_terms:
+    agent: 25
+    MCP: 7
+    Claude: 6
+    AI: 4
+    vector database: 1
