@@ -1,0 +1,40 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://withcoral.com/pricing
+sources:
+- https://withcoral.com/pricing
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: tiered-subscription
+delivery:
+  delivery: open-core
+  method: page
+  read: '2026-10-07'
+  evidence: Open Source Free forever Apache 2.0 license
+  free_edition: Open Source
+  managed_tier: Team
+  open_source_license: Apache 2.0
+published: true
+note: Three tiers; free Apache 2.0 self-hosted edition alongside hosted Team and custom Enterprise.
+plan_count: 3
+currency: USD
+plans:
+- name: Open Source
+  price_text: Free forever
+  period: none
+  included_quota: Core features, unlimited data sources, agents, queries; self-hosted, community support
+- name: Team
+  price_text: $249 / month + $0.005 / query above 50 000 queries
+  currency: USD
+  period: month
+  unit: query
+  included_quota: 50 000 queries
+  overage: Additional queries are billed monthly at $0.005 each
+- name: Enterprise
+  price_text: Custom pricing
+  period: none
+  included_quota: Everything in Team + SAML/SCIM, RBAC, audit log, SLAs
